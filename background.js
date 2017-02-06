@@ -75,6 +75,21 @@ function searchNovels(info, tab) {
     });
 }
 
+function searchCharacters(info, tab) {
+    var id = info.menuItemId.replace("chara-", "");
+    var search = encodeURIComponent(info.selectionText);
+    var searchMap = {
+        mal: "https://myanimelist.net/character.php?q=",
+        anidb: "https://anidb.net/perl-bin/animedb.pl?show=characterlist&noalias=1&adb.search=",
+        ap: "https://www.anime-planet.com/characters/all?name="
+    };
+    var searchUrl = searchMap[id] + search;
+
+    chrome.tabs.create({
+        url: searchUrl
+    });
+}
+
 var animeSources = [
     ["kitsu", "Kitsu"],
     ["mal", "MAL"],
@@ -112,6 +127,11 @@ var novelSources = [
     ["novelupdates", "Novel Updates"],
     ["bakatsuki", "Baka-Tsuki"]
 ];
+var charaSources = [
+    ["mal", "MAL"],
+    ["anidb", "AniDB"],
+    ["ap", "Anime-Planet"]
+];
 
 var anime = chrome.contextMenus.create({
                 id: "anime",
@@ -128,6 +148,11 @@ var novel = chrome.contextMenus.create({
                 title: "Novels",
                 contexts: ["selection"]
             });
+var character = chrome.contextMenus.create({
+                id: "character",
+                title: "Characters",
+                contexts: ["selection"]
+            });
 
 for (var i = 0; i < animeSources.length; i++) {
     createMenu("anime-" + animeSources[i][0], animeSources[i][1], anime, searchAnime);
@@ -137,4 +162,7 @@ for (var i = 0; i < mangaSources.length; i++) {
 }
 for (var i = 0; i < novelSources.length; i++) {
     createMenu("novel-" + novelSources[i][0], novelSources[i][1], novel, searchNovels);
+}
+for (var i = 0; i < charaSources.length; i++) {
+    createMenu("chara-" + charaSources[i][0], charaSources[i][1], character, searchCharacters);
 }
