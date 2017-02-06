@@ -17,6 +17,8 @@ function searchAnime(info, tab) {
         anilist: "https://anilist.co/search?type=anime&q=",
         anidb: "https://anidb.net/perl-bin/animedb.pl?show=animelist&noalias=0&adb.search=",
         ann: "https://www.animenewsnetwork.com/encyclopedia/search/name?only=anime&q=",
+        anngoog: "https://www.google.com/#q=site:animenewsnetwork.com/encyclopedia/anime.php+",
+        annddg: "https://duckduckgo.com/?q=site:animenewsnetwork.com/encyclopedia/anime.php+",
         ap: "https://www.anime-planet.com/anime/all?name=",
         amazon: "https://www.amazon.co.jp/s/url=search-alias%3Ddvd&field-keywords=",
         cr: "http://www.crunchyroll.com/search?q=",
@@ -27,7 +29,8 @@ function searchAnime(info, tab) {
         netflix: "https://www.netflix.com/search?q=",
         aniplex: "http://aniplexchannel.com/?s=",
         justwatch: "https://www.justwatch.com/us/search?genres=ani&q=",
-        sentai: "https://www.sentaifilmworks.com/search?q="
+        sentai: "https://www.sentaifilmworks.com/search?q=",
+        viz: "https://www.viz.com/search?category=Series&search="
     };
     var searchUrl = searchMap[id] + search;
 
@@ -43,11 +46,18 @@ function searchManga(info, tab) {
         kitsu: "https://kitsu.io/manga?text=",
         mal: "https://myanimelist.net/manga.php?q=",
         anilist: "https://anilist.co/search?type=manga&q=",
+        mugoog: "https://www.google.com/#q=site:mangaupdates.com/series.html+",
+        muddg: "https://duckduckgo.com/?q=site:mangaupdates.com/series.html+",
         ann: "https://www.animenewsnetwork.com/encyclopedia/search/name?only=manga&q=",
+        anngoog: "https://www.google.com/#q=site:animenewsnetwork.com/encyclopedia/manga.php+",
+        annddg: "https://duckduckgo.com/?q=site:animenewsnetwork.com/encyclopedia/manga.php+",
         ap: "https://www.anime-planet.com/manga/all?name=",
         amazon: "https://www.amazon.co.jp/s/url=search-alias%3Dstripbooks&field-keywords=",
         doujin: "https://www.doujinshi.org/search/simple/?T=objects&sn=",
         yenpress: "http://www.hachettebookgroup.com/search/?imprint=Yen&q=",
+        kodgoog: "https://www.google.com/#q=site:kodanshacomics.com/series/+",
+        kodddg: "https://duckduckgo.com/?q=site:kodanshacomics.com/series/+",
+        viz: "https://www.viz.com/search?category=Manga&search=",
         batoto: "https://bato.to/search?name=",
         mangahelpers: "https://mangahelpers.com/search?q=",
         line: "http://www.webtoons.com/search?keyword=",
@@ -96,6 +106,8 @@ var animeSources = [
     ["anilist", "Anilist"],
     ["anidb", "AniDB"],
     ["ann", "ANN"],
+    ["anngoog", "ANN (Google)"],
+    ["annddg", "ANN (DDG)"],
     ["ap", "Anime-Planet"],
     ["amazon", "Amazon (Japan)"],
     ["cr", "Crunchyroll"],
@@ -106,17 +118,25 @@ var animeSources = [
     ["netflix", "Netflix"],
     ["aniplex", "Aniplex Channel"],
     ["justwatch", "JustWatch (Meta)"],
-    ["sentai", "Sentai Filmworks"]
+    ["sentai", "Sentai Filmworks"],
+    ["viz", "Viz"]
 ];
 var mangaSources = [
     ["kitsu", "Kitsu"],
     ["mal", "MAL"],
     ["anilist", "Anilist"],
+    ["mugoog", "MangaUpdates (Google)"],
+    ["muddg", "MangaUpdates (DDG)"],
     ["ann", "ANN"],
+    ["anngoog", "ANN (Google)"],
+    ["annddg", "ANN (DDG)"],
     ["ap", "Anime-Planet"],
     ["amazon", "Amazon (Japan)"],
     ["doujin", "Doujinshi Lexicon"],
     ["yenpress", "YenPress"],
+    ["kodgoog", "Kodansha Comics (Google)"],
+    ["kodddg", "Kodansha Comics (DDG)"],
+    ["viz", "Viz"],
     ["batoto", "Batoto"],
     ["mangahelpers", "MangaHelpers"],
     ["line", "LINE Webtoon"],
