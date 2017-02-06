@@ -1,0 +1,10 @@
+{
+    "name": "Anime Search",
+    "version": "1.0",
+    "manifest_version": 2,
+    "description": "Search for anime and stuff",
+    "background": {
+        "scripts": [ "background.js" ]
+    },
+    "permissions": [ "contextMenus" ]
+}
